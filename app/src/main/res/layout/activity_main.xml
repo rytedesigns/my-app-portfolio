@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#ffdfeaf1"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:text="My Nanodegree App!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        style="@style/AppTheme"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+
+    <Button
+        android:text="SPOTIFY STREAMER"
+        android:id="@+id/spotify_streamer_button"
+        style="@style/PortfolioButton" />
+
+    <Button
+        android:text="SCORES APP"
+        android:id="@+id/scores_button"
+        android:layout_below="@+id/spotify_streamer_button"
+        style="@style/PortfolioButton" />
+
+    <Button
+        android:text="LIBRARY APP"
+        android:id="@+id/library_button"
+        android:layout_below="@+id/scores_button"
+        style="@style/PortfolioButton" />
+
+    <Button
+        android:text="BUILD IT BIGGER"
+        android:id="@+id/build_it_bigger_button"
+        android:layout_below="@+id/library_button"
+        style="@style/PortfolioButton" />
+
+    <Button
+        android:text="XYZ READER"
+        android:id="@+id/xyz_reader_button"
+        android:layout_below="@+id/build_it_bigger_button"
+        style="@style/PortfolioButton"/>
+
+    <Button
+        android:text="CAPSTONE: MY OWN APP"
+        android:id="@+id/capstone_button"
+        android:layout_below="@+id/xyz_reader_button"
+        style="@style/PortfolioButton.Capstone" />
+
+</RelativeLayout>
