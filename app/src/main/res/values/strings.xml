@@ -3,4 +3,24 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="capstone_app_name">Capstone</string>
+    <string name="xyz_reader_app_name">XYZ Reader</string>
+    <string name="build_it_bigger_app_name">Build It Bigger</string>
+    <string name="library_app_name">Library</string>
+    <string name="scores_app_name">Scores</string>
+    <string name="popular_movies_app_name">Popular Movies</string>
+    <string name="popular_movies_package_name">com.rytedesigns.popularmovies</string>
+    <string name="scores_package_name">barqsoft.footballscores</string>
+    <string name="library_package_name">it.jaschke.alexandria</string>
+    <string name="build_it_bigger_package_name">com.rytedesigns.buildItBigger</string>
+    <string name="xyz_reader_package_name">com.rytedesigns.xyzReader</string>
+    <string name="capstone_package_name">com.rytedesigns.capstone</string>
+    <string name="popular_movies_button_label">POPULAR MOVIES</string>
+    <string name="scores_button_label">SCORES APP</string>
+    <string name="nanodegree_app_label">My Nanodegree App!</string>
+    <string name="library_button_label">LIBRARY APP</string>
+    <string name="build_it_bigger_button_label">BUILD IT BIGGER</string>
+    <string name="xyz_reader_button_label">XYZ READER</string>
+    <string name="capstone_button_label">CAPSTONE: MY OWN APP</string>
+    <string name="not_installed_snackbar_message">" App is not yet installed!"</string>
 </resources>

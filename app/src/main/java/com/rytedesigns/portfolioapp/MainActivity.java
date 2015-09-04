@@ -1,51 +1,34 @@
 package com.rytedesigns.portfolioapp;
 
 import android.content.Intent;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
+public class MainActivity extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
 
-        Button spotifyStreamerButton = (Button) findViewById(R.id.spotify_streamer_button);
-
-        spotifyStreamerButton.setOnClickListener(LauncherOnClickListener);
-
-        Button scoresButton = (Button) findViewById(R.id.scores_button);
-
-        scoresButton.setOnClickListener(LauncherOnClickListener);
-
-        Button libraryButton = (Button) findViewById(R.id.library_button);
-
-        libraryButton.setOnClickListener(LauncherOnClickListener);
-
-        Button buildItBiggerButton = (Button) findViewById(R.id.build_it_bigger_button);
-
-        buildItBiggerButton.setOnClickListener(LauncherOnClickListener);
-
-        Button xyzReaderButton = (Button) findViewById(R.id.xyz_reader_button);
-
-        xyzReaderButton.setOnClickListener(LauncherOnClickListener);
-
-        Button capstoneButton = (Button) findViewById(R.id.capstone_button);
-
-        capstoneButton.setOnClickListener(LauncherOnClickListener);
+        ButterKnife.inject(this);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
 
@@ -53,21 +36,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void launchApplication(String packageName, String applicatlionName)
+    public void launchApplication(String packageName, String applicationName)
     {
         Intent applicationLaunchIntent = getPackageManager().getLaunchIntentForPackage(packageName);
 
@@ -77,74 +62,76 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this, "This button will launch my " + applicatlionName + " App!", Toast.LENGTH_LONG).show();
+            CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.snackbar_location);
+
+            Snackbar.make(coordinatorLayout, applicationName +
+                    getString(R.string.not_installed_snackbar_message), Snackbar.LENGTH_LONG).show();
         }
     }
 
-    View.OnClickListener LauncherOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view)
+    @OnClick({R.id.popular_movies_button, R.id.scores_button,
+            R.id.library_button, R.id.build_it_bigger_button,
+            R.id.xyz_reader_button, R.id.capstone_button})
+    public void onClick(View view)
+    {
+        String packageName = null;
+
+        String applicationName = "";
+
+        switch (view.getId())
         {
-            String packageName = null;
+            case R.id.popular_movies_button:
 
-            String applicationName = "";
+                packageName = getString(R.string.popular_movies_package_name);
 
-            switch (view.getId())
-            {
+                applicationName = getString(R.string.popular_movies_app_name);
 
-                case R.id.spotify_streamer_button:
+                break;
 
-                    packageName = "com.rytedesigns.spotifyStreamer";
+            case R.id.scores_button:
 
-                    applicationName = "Spotify Streamer";
+                packageName = getString(R.string.scores_package_name);
 
-                    break;
+                applicationName = getString(R.string.scores_app_name);
 
-                case R.id.scores_button:
+                break;
 
-                    packageName = "com.rytedesigns.scores";
+            case R.id.library_button:
 
-                    applicationName = "Scores";
+                packageName = getString(R.string.library_package_name);
 
-                    break;
+                applicationName = getString(R.string.library_app_name);
 
-                case R.id.library_button:
+                break;
 
-                    packageName = "com.rytedesigns.library";
+            case R.id.build_it_bigger_button:
 
-                    applicationName = "Library";
+                packageName = getString(R.string.build_it_bigger_package_name);
 
-                    break;
+                applicationName = getString(R.string.build_it_bigger_app_name);
 
-                case R.id.build_it_bigger_button:
+                break;
 
-                    packageName = "com.rytedesigns.buildItBigger";
+            case R.id.xyz_reader_button:
 
-                    applicationName = "Build It Bigger";
+                packageName = getString(R.string.xyz_reader_package_name);
 
-                    break;
+                applicationName = getString(R.string.xyz_reader_app_name);
 
-                case R.id.xyz_reader_button:
+                break;
 
-                    packageName = "com.rytedesigns.xyzReader";
+            case R.id.capstone_button:
 
-                    applicationName = "XYZ Reader";
+                packageName = getString(R.string.capstone_package_name);
 
-                    break;
+                applicationName = getString(R.string.capstone_app_name);
 
-                case R.id.capstone_button:
-
-                    packageName = "com.rytedesigns.capstone";
-
-                    applicationName = "Capstone";
-
-                    break;
-            }
-
-            if (packageName != null)
-            {
-                launchApplication(packageName, applicationName);
-            }
+                break;
         }
-    };
+
+        if (packageName != null)
+        {
+            launchApplication(packageName, applicationName);
+        }
+    }
 }

@@ -1,0 +1,115 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffdfeaf1"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/nanodegree_app_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        style="@style/AppTheme"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_row_one"
+        android:layout_below="@id/textView">
+
+        <Button
+            android:text="@string/popular_movies_button_label"
+            android:id="@+id/popular_movies_button"
+            style="@style/PortfolioButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:text="@string/scores_button_label"
+            android:id="@+id/scores_button"
+            style="@style/PortfolioButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_row_two"
+        android:layout_below="@+id/linear_layout_row_one">
+
+        <Button
+            android:text="@string/library_button_label"
+            android:id="@+id/library_button"
+            style="@style/PortfolioButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:text="@string/build_it_bigger_button_label"
+            android:id="@+id/build_it_bigger_button"
+            style="@style/PortfolioButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_layout_row_three"
+        android:layout_below="@+id/linear_layout_row_two">
+
+        <Button
+            android:text="@string/xyz_reader_button_label"
+            android:id="@+id/xyz_reader_button"
+            style="@style/PortfolioButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="4dp"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:text="@string/capstone_button_label"
+            android:id="@+id/capstone_button"
+            android:layout_below="@+id/xyz_reader_button"
+            style="@style/PortfolioButton.Capstone"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/snackbar_location"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/popular_movies_button"
+        android:layout_centerHorizontal="true">
+    </LinearLayout>
+
+</RelativeLayout>
